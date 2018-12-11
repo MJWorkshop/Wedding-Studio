@@ -2,17 +2,80 @@
     <head>
         <title>Dashboard</title>
         <link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css" />
+<!--        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
         <link rel="stylesheet" type="text/css" href="../style/style.css" />
         <link rel="stylesheet" type="text/css" href="../style/demo.css" />
         <link rel="stylesheet" type="text/css" href="../style/MultiLevelMenu.css" />
         <script src="../scripts/modernizr-custom.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        
+        <style>
+            .card-counter{
+    box-shadow: 2px 2px 10px #DADADA;
+    margin: 5px;
+    padding: 20px 10px;
+    background-color: #fff;
+    height: 100px;
+    border-radius: 5px;
+    transition: .3s linear all;
+  }
+
+  .card-counter:hover{
+    box-shadow: 4px 4px 20px #DADADA;
+    transition: .3s linear all;
+  }
+
+  .card-counter.primary{
+    background-color: #007bff;
+    color: #FFF;
+  }
+
+  .card-counter.danger{
+    background-color: #ef5350;
+    color: #FFF;
+  }  
+
+  .card-counter.success{
+    background-color: #66bb6a;
+    color: #FFF;
+  }  
+
+  .card-counter.info{
+    background-color: #26c6da;
+    color: #FFF;
+  }  
+
+  .card-counter i{
+    font-size: 5em;
+    opacity: 0.2;
+  }
+
+  .card-counter .count-numbers{
+    position: absolute;
+    right: 35px;
+    top: 20px;
+    font-size: 32px;
+    display: block;
+  }
+
+  .card-counter .count-name{
+    position: absolute;
+    right: 35px;
+    top: 65px;
+    font-style: italic;
+    text-transform: capitalize;
+    opacity: 0.5;
+    display: block;
+    font-size: 18px;
+  }
+        </style>
     </head>
     <body>
         <div class="container">
             <header class="bp-header cf">
                 <div class="dummy-logo">
                     <div class="dummy-icon foodicon foodicon--coconut"></div>
-                    <h2 class="dummy-heading">Fooganic</h2>
+                    <h2 class="dummy-heading">Wedding-Studio</h2>
                 </div>
             </header>
             <button class="action action--open" aria-label="Open Menu"><span class="icon icon--menu"></span></button>
@@ -20,10 +83,11 @@
                 <button class="action action--close" aria-label="Close Menu"><span class="icon icon--cross"></span></button>
                 <div class="menu__wrap">
                     <ul data-menu="main" class="menu__level" tabindex="-1" role="menu" aria-label="All">
-                        <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1" aria-owns="submenu-1" href="#">Vegetables</a></li>
-                        <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2" aria-owns="submenu-2" href="#">Fruits</a></li>
-                        <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-3" aria-owns="submenu-3" href="#">Grains</a></li>
-                        <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-4" aria-owns="submenu-4" href="#">Mylk &amp; Drinks</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1" aria-owns="submenu-1" href="#">Booking Management</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2" aria-owns="submenu-2" href="#">Profile Management</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-3" aria-owns="submenu-3" href="#">Role Management</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-4" aria-owns="submenu-4" href="#">Backup Management</a></li>
+                        <li class="menu__item" role="menuitem"><a class="menu__link" href="../index.html">Logout</a></li>
                     </ul>
                     <!-- Submenu 1 -->
                     <ul data-menu="submenu-1" id="submenu-1" class="menu__level" tabindex="-1" role="menu" aria-label="Vegetables">
@@ -88,7 +152,47 @@
                 </div>
             </nav>
             <div class="content">
-                <!-- Ajax loaded content here -->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 dummy-space"></div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card-counter primary">
+                                <i class="fa fa-code-fork"></i>
+                                <span class="count-numbers">12</span>
+                                <span class="count-name">Flowz</span>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="card-counter danger">
+                                <i class="fa fa-ticket"></i>
+                                <span class="count-numbers">599</span>
+                                <span class="count-name">Booking</span>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="card-counter success">
+                                <i class="fa fa-database"></i>
+                                <span class="count-numbers">6875</span>
+                                <span class="count-name">Data</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card-counter info">
+                                <i class="fa fa-users"></i>
+                                <span class="count-numbers">35</span>
+                                <span class="count-name">Staffs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <script src="../scripts/classie.js"></script>
