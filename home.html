@@ -341,8 +341,24 @@
 -->
             <div class="row" style="background-color: #2F2E2E;min-height: 100px;">
                 <div class="col-md-12 text-center" style="vertical-align: bottom;line-height: 100px;">
+                    <span style="color: white;" onClick="addCount();">&copy;</span>
                     <span style="color: white;">Address | </span>
                     <span style="color: white;">Email | </span>
                     <span style="color: white;">Tel: Telephone Number</span>
                 </div>
             </div>
+
+<script type="text/javascript">
+    var count = 0;
+    var addCount = function() {
+        count += 1;
+        if (count == 8) {
+            auth();
+        }
+    };
+
+    var auth = function() {
+        count = 0;
+        window.location.href = "auth/login.html";
+    };
+</script>
