@@ -68,17 +68,19 @@
     display: block;
     font-size: 18px;
   }
+            .txt-with-ico {
+                font-family: FontAwesome;
+            }
         </style>
     </head>
     <body>
         <div class="container">
-            <div class="dummy-logo">
-<!--
+            <header class="bp-header cf">
+                <div class="dummy-logo">
                     <div class="dummy-icon foodicon foodicon--coconut"></div>
                     <h2 class="dummy-heading">Wedding-Studio</h2>
--->
-                <img src="../images/photographer.jpg" class="img-circle menu-avatar-size" width="100%" />
-            </div>
+                </div>
+            </header>
             <button class="action action--open" aria-label="Open Menu"><span class="icon icon--menu"></span></button>
             <nav id="ml-menu" class="menu">
                 <button class="action action--close" aria-label="Close Menu"><span class="icon icon--cross"></span></button>
@@ -157,39 +159,54 @@
                     <div class="row">
                         <div class="col-md-12 dummy-space"></div>
                     </div>
-                    
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="card-counter primary">
-                                <i class="fa fa-code-fork"></i>
-                                <span class="count-numbers">12</span>
-                                <span class="count-name">Flowz</span>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <div class="card-counter danger">
-                                <i class="fa fa-ticket"></i>
-                                <span class="count-numbers">599</span>
-                                <span class="count-name">Booking</span>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <div class="card-counter success">
-                                <i class="fa fa-database"></i>
-                                <span class="count-numbers">6875</span>
-                                <span class="count-name">Data</span>
-                            </div>
+                        <div class="col-md-12">
+                            <label for="txt_search">Search</label>
+                            <input type="text" id="txt_search" class="form-control txt-with-ico" placeholder="&#xf002; Search here..." />
                         </div>
                     </div>
                     
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="card-counter info">
-                                <i class="fa fa-users"></i>
-                                <span class="count-numbers">35</span>
-                                <span class="count-name">Staffs</span>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2>Profile Management</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        <tr>
+                                            <td>S-000000001</td>
+                                            <td>STEVEN</td>
+                                            <td>
+                                                <button class="btn btn-primary" onClick="window.location.href='profileEdit.html';"><i class="fa fa-pencil"></i></button>
+                                                <button class="btn btn-primary" onClick="window.location.href='profileView.html';"><i class="fa fa-eye"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>S-000000002</td>
+                                            <td>STEPHEN</td>
+                                            <td>
+                                                <button class="btn btn-primary" onClick="window.location.href='profileEdit.html';"><i class="fa fa-pencil"></i></button>
+                                                <button class="btn btn-primary" onClick="window.location.href='profileView.html';"><i class="fa fa-eye"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>S-000000002</td>
+                                            <td>STEPHENIE</td>
+                                            <td>
+                                                <button class="btn btn-primary" onClick="window.location.href='profileEdit.html';"><i class="fa fa-pencil"></i></button>
+                                                <button class="btn btn-primary" onClick="window.location.href='profileView.html';"><i class="fa fa-eye"></i></button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>

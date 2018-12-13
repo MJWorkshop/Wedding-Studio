@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="../css/datepickk.min.css"/>
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="../style/datepickk.min.css"/>
+<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css"/>
 <div class="row">
     <div class="col-md-12">
         <h1>Book a time slot for consultation</h1>

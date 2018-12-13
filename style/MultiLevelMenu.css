@@ -38,12 +38,19 @@
 
 .menu {
 	position: fixed;
-	top: 120px;
+	top: 170px;
 	left: 0;
 	width: 300px;
 	height: calc(100vh - 120px);
 	background: #1c1d22;
 }
+
+/*Menu Avatar*/
+.menu-avatar-size {
+    width: 150px;
+    height: 150px;
+}
+/*Menu Avatar*/
 
 .menu__wrap {
 	position: absolute;
