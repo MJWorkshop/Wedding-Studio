@@ -8,17 +8,15 @@
     
 <body>
 
+<div class="container">
+
 <div class="row">
     <div class="col-md-12">
-        <h1>Book a time slot for consultation</h1>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-6">
         <div class="datepicker"></div>
     </div>
-    
-    <div class="col-md-6">
+    </div>
+    <div class="row">
+    <div class="col-md-12">
         <form id="bookingForm" action="bookingConfirmation.php" method="post">
             <fieldset>
                 <legend><h1>Booking Information</h1></legend>
@@ -105,6 +103,7 @@
     </div>
 </div>
 
+    </div>
 <script src="../scripts/jquery.min.js"></script>
 <script src="../scripts/datepickk.js"></script>
 
