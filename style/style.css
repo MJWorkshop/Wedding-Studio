@@ -24,14 +24,23 @@ License: http://creativecommons.org/licenses/by-sa/3.0/ (Attribution Share Alike
 .person-name {
     font-size: 20px;
     font-weight: 500;
+    color:white;
 }
 .person-wrapper {
     margin-top: 15px;
     margin-bottom: 25px;
 }
 
+.person-desc{
+    color:white;
+}
+
 .booking-button{
     background-color: #242323;
+}
+
+.about-background{
+    background-color:#242323 
 }
 /*About*/
 
