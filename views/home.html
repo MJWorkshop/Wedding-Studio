@@ -9,7 +9,7 @@
                 </div>
             </div>
             
-            <div class="row service-wrapper">
+            <div ng-controller="myController" class="row service-wrapper" id="services">
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-12">
@@ -23,19 +23,21 @@
                                 <div class="col-md-12 service-col">
                                     <div class="row">
                                         <div class="col-md-12 text-uppercase">
-                                            <h2>wedding dress</h2>
+                                            <h2>{{service[0].service}}</h2>
                                         </div>
                                     </div>
                                     
                                     <div class="row service-content-container">
                                         <div class="col-md-12">
-                                            <p class="text-justify service-detail">I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
+                                            <p class="text-justify service-detail">{{service[0].description}}</p>
                                         </div>
                                     </div>
+                                    
                                     
                                     <div class="row service-img">
                                         <div class="col-md-12 service-col">
                                             <img src="images/wedding_dress.jpg" width="100%" />
+                                            <p><small>{{service[0].slogan}}</small></p>
                                         </div>
                                     </div>
                                 </div>
@@ -46,19 +48,21 @@
                                 <div class="col-md-12 service-col">
                                     <div class="row">
                                         <div class="col-md-12 text-uppercase">
-                                            <h2>photograph</h2>
+                                            <h2>{{service[1].service}}</h2>
                                         </div>
                                     </div>
                                     
                                     <div class="row service-content-container">
                                         <div class="col-md-12">
-                                            <p class="text-justify service-detail">I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
+                                            <p class="text-justify service-detail">{{service[1].description}}</p>
+                                            
                                         </div>
                                     </div>
                                     
                                     <div class="row service-img">
                                         <div class="col-md-12 service-col">
                                             <img src="images/photograph.jpg" width="100%" />
+                                            <p><small>{{service[1].slogan}}</small></p>
                                         </div>
                                     </div>
                                 </div>
@@ -69,19 +73,20 @@
                                 <div class="col-md-12 service-col">
                                     <div class="row">
                                         <div class="col-md-12 text-uppercase">
-                                            <h2>wedding decorations</h2>
+                                            <h2>{{service[2].service}}</h2>
                                         </div>
                                     </div>
                                     
                                     <div class="row service-content-container">
                                         <div class="col-md-12">
-                                            <p class="text-justify service-detail">I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
+                                            <p class="text-justify service-detail">{{service[2].description}}</p>
                                         </div>
                                     </div>
                                     
                                     <div class="row service-img">
                                         <div class="col-md-12 service-col">
                                             <img src="images/decoration.jpg" width="100%" />
+                                            <p><small>{{service[2].slogan}}</small></p>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +96,7 @@
                     
                     <div class="row text-center booking-button">
                         <div class="col-md-4 col-md-push-4">
-                            <a class="btn btn-default btn-lg text-uppercase service-button " href="#booking">Book any service now!</a>
+                            <a class="btn btn-default btn-lg text-uppercase service-button " href="#booking">Book for service consultation now!</a>
                         </div>
                     </div>
                 </div>
@@ -101,7 +106,7 @@
             
             
         
-            <div class="row gallery-row" id="third">
+            <div class="row gallery-row" id="gallery">
                 <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-12">

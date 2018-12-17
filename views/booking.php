@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-<link rel="stylesheet" type="text/css" href="../style/datepickk.min.css"/>
-<link rel="stylesheet" type="text/css" href="../style/bootstrap.min.css"/>
-</head>
-    
-<body>
-
-<div class="container">
+<div class="container booking-page">
 <div class="row">
     <div class="col-md-12">
         <div class="datepicker"></div>
@@ -16,7 +7,7 @@
     </div>
     <div class="row">
     <div class="col-md-12">
-        <form id="bookingForm" action="bookingConfirmation.php" method="post">
+        <form id="bookingForm" action="views/bookingConfirmation.php" method="post">
             <fieldset>
                 <legend><h1>Booking Information</h1></legend>
                 <div class="row">
@@ -103,8 +94,8 @@
 </div>
 
     </div>
-<script src="../scripts/jquery.min.js"></script>
-<script src="../scripts/datepickk.js"></script>
+
+
 
 <!--datepicker js-->
 <script type="text/javascript">
@@ -125,5 +116,3 @@
         minDate: new Date(now.getFullYear(),now.getMonth(),now.getDate())
     });
 </script>
-</body>
-</html>

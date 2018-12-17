@@ -55,6 +55,9 @@ License: http://creativecommons.org/licenses/by-sa/3.0/ (Attribution Share Alike
     border: 2px solid #F0E68C;
     background-color: #242323;
     color: #F0E68C;
+    margin-bottom: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 .service-detail {
     padding: 10px 50px 30px 50px;
@@ -417,3 +420,8 @@ li .active {
     max-height: 100px;
 }
 /*Dummy Space*/
+
+/*booking page*/
+.booking-page{
+    margin-top: 50px;
+}
