@@ -17,7 +17,8 @@ app.config(function($routeProvider, $locationProvider){
     .when('/booking/view/:id', {
         templateUrl: function() {
             return 'bookingView.html?' + new Date();
-        }
+        },
+        controller: 'bookingViewController'
     })
     .when('/profile', {
         templateUrl: function() {

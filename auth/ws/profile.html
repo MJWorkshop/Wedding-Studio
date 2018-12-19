@@ -24,6 +24,15 @@
                             <th>Name</th>
                             <th>Action</th>
                         </tr>
+                        <tr data-ng-repeat="p in profileList">
+                            <td>{{p.id}}</td>
+                            <td>{{p.name}}</td>
+                            <td>
+                                <button class="btn btn-primary btnAction" data-profile="{{p.id}}" data-action="edit"><i class="fa fa-pencil"></i></button>
+                                <button class="btn btn-primary btnAction" data-profile="{{p.id}}" data-action="view"><i class="fa fa-eye"></i></button>
+                            </td>
+                        </tr>
+<!--
                         <tr>
                             <td>S-000000001</td>
                             <td>STEVEN</td>
@@ -48,6 +57,7 @@
                                 <button class="btn btn-primary btnAction" data-profile="3" data-action="view"><i class="fa fa-eye"></i></button>
                             </td>
                         </tr>
+-->
                     </table>
                 </div>
             </div>

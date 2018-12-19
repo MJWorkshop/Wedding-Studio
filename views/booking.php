@@ -1,5 +1,4 @@
-
-<div class="container booking-page">
+<div class="container booking-page" data-ng-controller="bookingCtrl">
 <div class="row">
     <div class="col-md-12">
         <div class="datepicker"></div>
@@ -94,25 +93,3 @@
 </div>
 
     </div>
-
-
-
-<!--datepicker js-->
-<script type="text/javascript">
-    var now = new Date();
-    var datepicker = new Datepickk({
-        container: document.querySelector('.datepicker'),
-        inline:true,
-        range:false,
-        onSelect:function(checked){
-            var state = (checked) ? 'selected': 'unselected';
-            //window.alert(this.toLocaleDateString());
-            $('.strDate').val(this.toLocaleDateString());
-//            console.log($('.strDate'));
-            //console.log(this.toLocaleDateString());
-            //$('.strDate').value = this.toLocaleDateString();
-        },
-        maxSelections:1,
-        minDate: new Date(now.getFullYear(),now.getMonth(),now.getDate())
-    });
-</script>

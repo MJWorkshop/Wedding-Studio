@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" data-ng-controller="bookingViewController">
     <div class="row">
         <div class="col-md-12">
             <h2>Booking Details</h2>
@@ -22,7 +22,7 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-12">
-                            <span>B-000000001</span>
+                            <span>{{bookingID}}</span>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-12">
-                            <span>Wedding Dress</span>
+                            <span>{{bookingCategory}}</span>
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-12">
-                            <span>STEVEN</span>
+                            <span>{{ownerName}}</span>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-12">
-                            <span>15 Dec 2018</span>
+                            <span>{{bookingDate}}</span>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-12">
-                            <span>14:00 - 15:30</span>
+                            <span>{{bookingStartTime}} - {{bookingEndTime}}</span>
                         </div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-12">
-                            <p class="text-justify">The Paragraphs module allows content creators to choose which kinds of paragraphs they want to place on the page, and the order in which they want to place them. They can do all of this through the familiar node edit screen. There is no need to resort to code, the dreaded block placement config screen or Panelizer overrides. They just use node edit form where all content is available to them in one place.</p>
+                            <p class="text-justify">{{bookingDescription}}</p>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                 <div class="col-md-12">
                     <button class="btn btn-success">ACCEPT</button>
                     <button class="btn btn-danger">DECLINE</button>
-                    <button class="btn btn-default" onClick="window.location.href='booking.html';">BACK</button>
+                    <button class="btn btn-default btnBack">BACK</button>
                 </div>
             </div>
         </div>

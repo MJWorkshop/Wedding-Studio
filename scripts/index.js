@@ -57,6 +57,7 @@ app.controller('mainCtrl', function($scope) {
     });
 });
 
+
 //app.controller('aboutCtrl', function($scope) {
 //            $('html, body').stop().animate({
 //                scrollTop: ($('#about').offset().top - 20)

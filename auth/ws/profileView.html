@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" data-ng-controller="profileViewController">
     <div class="row">
         <div class="col-md-12">
             <table class="table table-condensed">
@@ -10,27 +10,27 @@
                 <tr>
                     <td class="text-right">ID</td>
                     <td>:</td>
-                    <td>S-000000001</td>
+                    <td>{{id}}</td>
                 </tr>
                 <tr>
                     <td class="text-right">Name</td>
                     <td>:</td>
-                    <td>STEVEN</td>
+                    <td>{{name}}</td>
                 </tr>
                 <tr>
                     <td class="text-right">NRIC</td>
                     <td>:</td>
-                    <td>XXXXXXXXXXXXXXX</td>
+                    <td>{{nric}}</td>
                 </tr>
                 <tr>
                     <td class="text-right">Gender</td>
                     <td>:</td>
-                    <td>Male</td>
+                    <td>{{gender}}</td>
                 </tr>
                 <tr>
                     <td class="text-right">Contact</td>
                     <td>:</td>
-                    <td>XXXXXXXXXXXX</td>
+                    <td>{{contact}}</td>
                 </tr>
                 <tr>
                     <td class="text-right">Email</td>
@@ -39,7 +39,7 @@
                 </tr>
                 <tr class="text-center">
                     <td colspan="3">
-                        <button class="btn btn-primary">Back</button>
+                        <button class="btn btn-primary btnBack">Back</button>
                     </td>
                 </tr>
             </table>
