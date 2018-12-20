@@ -15,53 +15,53 @@
                 <tr>
                     <td class="text-right">ID</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control" value="{{id}}" /></td>
+                    <td><input type="text" class="form-control" data-ng-model="id" disabled /></td>
                 </tr>
                 <tr>
                     <td class="text-right">Name</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control" value="{{name}}" /></td>
+                    <td><input type="text" class="form-control" data-ng-model="name" /></td>
                 </tr>
                 <tr>
                     <td class="text-right">NRIC</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control" value="{{nric}}" /></td>
+                    <td><input type="text" class="form-control" data-ng-model="nric" /></td>
                 </tr>
                 <tr>
                     <td class="text-right">Gender</td>
                     <td>:</td>
                     <td>
-                        <input type="radio" id="rdoMale" name="rdoGender" value="M" checked />
+                        <input type="radio" id="rdoMale" name="rdoGender" data-ng-model="rdoGender" value="M" />
                         <label for="rdoMale">Male</label>
                         &nbsp;&nbsp;&nbsp;
-                        <input type="radio" id="rdoFemale" name="rdoGender" value="F" />
+                        <input type="radio" id="rdoFemale" name="rdoGender" data-ng-model="rdoGender" value="F" />
                         <label for="rdoFemale">Female</label>
                     </td>
                 </tr>
                 <tr>
                     <td class="text-right">Contact</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control" value="{{contact}}" /></td>
+                    <td><input type="text" class="form-control" data-ng-model="contact" /></td>
                 </tr>
                 <tr>
                     <td class="text-right">Email</td>
                     <td>:</td>
-                    <td><input type="text" class="form-control" value="XXX@XXXXX.XXX" /></td>
+                    <td><input type="text" class="form-control" data-ng-model="email" /></td>
                 </tr>
                 <tr>
                     <td class="text-right">Status</td>
                     <td>:</td>
                     <td>
-                        <select class="form-control">
-                            <option>ACTIVE</option>
-                            <option>IN-ACTIVE</option>
-                            <option>FREEZE</option>
+                        <select class="form-control" data-ng-model="status">
+                            <option value="A">ACTIVE</option>
+                            <option value="I">IN-ACTIVE</option>
+                            <option value="F">FREEZE</option>
                         </select>
                     </td>
                 </tr>
                 <tr class="text-center">
                     <td colspan="3">
-                        <button class="btn btn-primary">Save</button>
+                        <button class="btn btn-primary btnSave">Save</button>
                         <button class="btn btn-default btnBack">Cancel</button>
                     </td>
                 </tr>

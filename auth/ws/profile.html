@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <label for="txt_search">Search</label>
-            <input type="text" id="txt_search" class="form-control txt-with-ico" placeholder="&#xf002; Search here..." />
+            <input type="text" name="txt_search" id="txt_search" data-ng-model="searchProfileFilter" class="form-control txt-with-ico" placeholder="&#xf002; Search here..." />
         </div>
     </div>
 
@@ -24,7 +24,7 @@
                             <th>Name</th>
                             <th>Action</th>
                         </tr>
-                        <tr data-ng-repeat="p in profileList">
+                        <tr data-ng-repeat="p in profileList | filter:searchProfileMS | offset:(currentPage - 1) * itemsPerPage | limitTo:itemsPerPage">
                             <td>{{p.id}}</td>
                             <td>{{p.name}}</td>
                             <td>
@@ -32,33 +32,12 @@
                                 <button class="btn btn-primary btnAction" data-profile="{{p.id}}" data-action="view"><i class="fa fa-eye"></i></button>
                             </td>
                         </tr>
-<!--
-                        <tr>
-                            <td>S-000000001</td>
-                            <td>STEVEN</td>
-                            <td>
-                                <button class="btn btn-primary btnAction" data-profile="1" data-action="edit"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-primary btnAction" data-profile="1" data-action="view"><i class="fa fa-eye"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>S-000000002</td>
-                            <td>STEPHEN</td>
-                            <td>
-                                <button class="btn btn-primary btnAction" data-profile="2" data-action="edit"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-primary btnAction" data-profile="2" data-action="view"><i class="fa fa-eye"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>S-000000002</td>
-                            <td>STEPHENIE</td>
-                            <td>
-                                <button class="btn btn-primary btnAction" data-profile="3" data-action="edit"><i class="fa fa-pencil"></i></button>
-                                <button class="btn btn-primary btnAction" data-profile="3" data-action="view"><i class="fa fa-eye"></i></button>
-                            </td>
-                        </tr>
--->
                     </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <uib-pagination data-ng-model="currentPage" data-total-items="totalItems" data-max-size="maxSize" items-per-page="itemsPerPage" data-boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></uib-pagination>
                 </div>
             </div>
         </div>
