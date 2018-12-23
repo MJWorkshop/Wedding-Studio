@@ -75,6 +75,7 @@
         </div>
         <script src="../scripts/jquery.min.js"></script>
         <script src="../scripts/bootstrap.min.js"></script>
+        <script src="../scripts/jquery.cookie.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
                 $('button[name=btnReg]').on('click', function() {
@@ -102,8 +103,10 @@
                             data: $('form[name=frmLogin]').serialize(),
                             success: function(result) {
                                 var results = JSON.parse(result);
-                                if (results.result == "pass")
+                                if (results.result == "pass") {
                                     window.location.href = 'ws/';
+                                    $.cookie('id', results.id, {expires: 1});
+                                }
                             }
                         })
                     }

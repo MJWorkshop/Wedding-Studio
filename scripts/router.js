@@ -36,6 +36,11 @@ app.config(function($routeProvider, $locationProvider){
             return 'profileView.html?' + new Date();
         }
     })
+    .when('/profile/my', {
+        templateUrl: function() {
+            return 'myprofile.html?' + new Date();
+        }
+    })
 	.otherwise({
 		templateUrl: 'error-404.html'
 	});

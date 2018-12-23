@@ -434,3 +434,10 @@ li .active {
 .booking-page{
     margin-top: 50px;
 }
+
+/*my profile*/
+.info-row {
+    min-height: 45px;
+    max-height: 45px;
+    font-size: 16px;
+}

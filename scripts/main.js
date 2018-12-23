@@ -12,10 +12,40 @@ app.filter('offset', function () {
     };
 });
 
+app.service('storeService', function($http) {
+    var info;
+    
+    return {
+        getInfo: getInfo,
+        setInfo: setInfo
+    };
+    
+    function getInfo() {
+        return info;
+    }
+    
+    function setInfo(value) {
+        info = value;
+    }
+});
+
+app.directive('editable', function () {
+    return function (scope, elem, attrs) {
+        scope.sho = true;
+        scope.choose = function () {
+            scope.sho = !scope.sho;
+        }
+    }
+});
+
+app.controller('mainController', function ($scope, $http, storeService) {
+    
+});
+
 app.controller('profileController', function($scope, $http, $filter) {
     
     $scope.currentPage = 1; //Initial current page to 1
-    $scope.itemsPerPage = 8; //Record number each page
+    $scope.itemsPerPage = 1; //Record number each page
     $scope.maxSize = 10; //Show the number in page
     
     $http({
@@ -134,6 +164,7 @@ app.controller('profileEditController', function($scope, $http, $routeParams) {
         $scope.contact = $scope.profileDetail.contact;
         $scope.email = $scope.profileDetail.email;
         $scope.status = $scope.profileDetail.status;
+        $scope.level = $scope.profileDetail.level;
     });
     
     $('.btnback').on('click', function(){
@@ -145,7 +176,7 @@ app.controller('profileEditController', function($scope, $http, $routeParams) {
             method: 'POST',
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             url: '../database/backend.php?module=profile&action=update&id=' + $scope.id,
-            data: $.param({"name": $scope.name, "nric": $scope.nric, "gender": $scope.rdoGender, "contact": $scope.contact, "email": $scope.email, "status": $scope.status})
+            data: $.param({"name": $scope.name, "nric": $scope.nric, "gender": $scope.rdoGender, "contact": $scope.contact, "email": $scope.email, "status": $scope.status, "level": $scope.level})
         }).then(function successCallback(response) {
             var mes = response.data.result;
             if (mes === "Failed!")
@@ -154,4 +185,49 @@ app.controller('profileEditController', function($scope, $http, $routeParams) {
                 window.location.href = '#profile';
         });
     })
+});
+
+app.controller('viewMyProfileController', function ($scope, $http, $compile) {
+    var id = $.cookie('id');
+    
+    $http({
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        url: '../database/backend.php?module=self',
+        data: $.param({"id": id})
+    }).then(function successCallback(response) {
+        var myProfile = response.data;
+        
+        $scope.id = myProfile.id;
+        $scope.name = myProfile.name;
+        $scope.nric = myProfile.nric;
+        $scope.rdoGender = myProfile.gender;
+        if ($scope.rdoGender == 'M')
+            $scope.strGender = "Male";
+        else if ($scope.rdoGender == 'F')
+            $scope.strGender = "Female";
+        $scope.contact = myProfile.contact;
+        $scope.email = myProfile.email;
+    });
+    
+    $(document).on('click', 'button.btnEditSelf', function() {
+        $(this).text('Save').removeClass('btnEditSelf').removeClass('btn-primary').addClass('btnSaveSelf').addClass('btn-warning');
+        $('.btnBackSelf').replaceWith($compile('<button class="btn btn-default btnCancelSelf" data-ng-click="choose();">Cancel</button>')($scope));
+    });
+    
+    $(document).on('click', 'button.btnSaveSelf', function() {
+        $(this).text('Edit').removeClass('btnSaveSelf').removeClass('btn-warning').addClass('btnEditSelf').addClass('btn-primary');
+        $('.btnCancelSelf').replaceWith('<button class="btn btn-default btnBackSelf">Back</button>');
+        
+        $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        })
+        
+    });
+    
+    $(document).on('click', 'button.btnCancelSelf', function() {
+        $('.btnSaveSelf').text('Edit').removeClass('btnSaveSelf').removeClass('btn-warning').addClass('btnEditSelf').addClass('btn-primary');
+        $(this).replaceWith('<button class="btn btn-default btnBackSelf">Back</button>');
+    });
 });

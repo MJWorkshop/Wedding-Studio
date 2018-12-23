@@ -87,7 +87,7 @@
         </style>
     </head>
     <body>
-        <div class="container">
+        <div class="container" data-ng-controller="mainController">
             <div class="dummy-logo">
 <!--
                     <div class="dummy-icon foodicon foodicon--coconut"></div>
@@ -102,6 +102,9 @@
                     <ul data-menu="main" class="menu__level" tabindex="-1" role="menu" aria-label="All">
                         <li class="menu__item" role="menuitem">
                             <a class="menu__link" href="#/">Dashboard</a>
+                        </li>
+                        <li class="menu__item" role="menuitem">
+                            <a class="menu__link" href="#profile/my">My Profile</a>
                         </li>
                         <li class="menu__item" role="menuitem">
                             <a class="menu__link" href="#booking">Booking Management</a>
@@ -151,6 +154,7 @@
         <script src="../../scripts/angular-1.6.9/angular.min.js"></script>
         <script src="../../scripts/angular-1.6.9/angular-route.min.js"></script>
         <script src="../../scripts/ui-bootstrap-tpls-0.14.3.min.js"></script>
+        <script src="../../scripts/jquery.cookie.js"></script>
         <script src="../../scripts/main.js"></script>
         <script src="../../scripts/router.js"></script>
         <script src="../../scripts/classie.js"></script>

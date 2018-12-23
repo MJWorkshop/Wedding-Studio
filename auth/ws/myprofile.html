@@ -1,0 +1,182 @@
+<div class="container-fluid" data-ng-controller="viewMyProfileController">
+    <div class="row">
+        <div class="col-md-12">
+            
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <img src="../../images/photographer.jpg" class="img-circle avatar-size" width="100%" />
+                </div>
+            </div><hr />
+            
+            <div class="row info-row">
+                <div class="col-md-5">
+                    <div class="row text-right">
+                        <div class="col-md-12">
+                            <span>ID</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>:</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>{{id}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row info-row">
+                <div class="col-md-5">
+                    <div class="row text-right">
+                        <div class="col-md-12">
+                            <span>Name</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>:</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div editable>
+                                <input type="text" class="form-control" data-ng-model="name" data-ng-show="!sho" />
+                                <span data-ng-show="sho">{{name}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row info-row">
+                <div class="col-md-5">
+                    <div class="row text-right">
+                        <div class="col-md-12">
+                            <span>NRIC</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>:</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div editable>
+                                <input type="text" class="form-control" data-ng-model="nric" data-ng-show="!sho" />
+                                <span data-ng-show="sho">{{nric}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row info-row">
+                <div class="col-md-5">
+                    <div class="row text-right">
+                        <div class="col-md-12">
+                            <span>Gender</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>:</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div editable>
+                                <input type="radio" id="rdoMale" name="rdoGender" data-ng-model="rdoGender" value="M" data-ng-show="!sho" />
+                                <label for="rdoMale" data-ng-show="!sho">Male</label>
+                                <span data-ng-show="!sho">&nbsp;&nbsp;&nbsp;</span>
+                                <input type="radio" id="rdoFemale" name="rdoGender" data-ng-model="rdoGender" value="F" data-ng-show="!sho" />
+                                <label for="rdoFemale" data-ng-show="!sho">Female</label>
+                                <span data-ng-show="sho">{{strGender}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row info-row">
+                <div class="col-md-5">
+                    <div class="row text-right">
+                        <div class="col-md-12">
+                            <span>Contact</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>:</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div editable>
+                                <input type="text" class="form-control" data-ng-model="contact" data-ng-show="!sho" />
+                                <span data-ng-show="sho">{{contact}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row info-row">
+                <div class="col-md-5">
+                    <div class="row text-right">
+                        <div class="col-md-12">
+                            <span>Email</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span>:</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div editable>
+                                <input type="text" class="form-control" data-ng-model="email" data-ng-show="!sho" />
+                                <span data-ng-show="sho">{{email}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><hr />
+
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <button class="btn btn-primary btnEditSelf" data-ng-click="choose()">Edit</button>
+                    <button class="btn btn-default btnBackSelf">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
