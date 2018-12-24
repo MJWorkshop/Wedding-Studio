@@ -12,14 +12,14 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Date</h2>
-                        <input type="text" name="bDate" class="strDate form-control"/>
+                        <input type="text" name="bDate" data-ng-model="bDate" class="strDate form-control"/>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Time</h2>
-                        <select class="form-control" name="bTime">
+                        <select class="form-control" name="bTime" data-ng-model="bTime">
                             <option value="8.00 am">8.00 am</option>
                             <option value="10.00 am">10.00 am</option>
                             <option value="1.00 pm">1.00 pm</option>
@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h3>Service Type</h3>
-                        <select class="form-control" name="bService">
+                        <select class="form-control" name="bService" data-ng-model="bService">
                             <option value="Wedding dress renting service">Wedding dress renting service</option>
                             <option value="Photography service">Photography service</option>
                             <option value="Wedding service">Wedding service</option>
@@ -91,6 +91,17 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <label class="control-label" for="bDesc">Leave message/question here:</label>
+                        </div>
+                        <div class="col-md-11">
+                            <textarea class="form-control" rows="5" id ="bDesc" name="bDesc" data-ng-model="bDesc"></textarea>
+                        </div>
+                    </div>
+                </div>
                 <br/> 
                 
             </fieldset>
@@ -98,7 +109,7 @@
         
         <div class="row">
             <div class="col-md-1"><button type="button" class="btn btn-danger btn-lg">Back</button></div>
-            <div class="col-md-1 col-md-push-9"><button type="submit" form="bookingForm" class="btn btn-success btn-lg">Submit</button></div>
+            <div class="col-md-1 col-md-push-9"><button type="button"  class="btn btn-success btn-lg btnBookingConfirm">Submit</button></div>
         </div>
             
         

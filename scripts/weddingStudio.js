@@ -21,7 +21,9 @@ app.controller("myController", function($scope,$http){
     });
 });
 
-app.controller("bookingCtrl", function($scope) {
+app.controller("bookingCtrl", function($scope, $http) {
+    
+    //datepicker function
     var now = new Date();
     var datepicker = new Datepickk({
         container: document.querySelector('.datepicker'),
@@ -38,7 +40,48 @@ app.controller("bookingCtrl", function($scope) {
         maxSelections:1,
         minDate: new Date(now.getFullYear(),now.getMonth(),now.getDate())
     });
+    
+    //backend
+    $('.btnBookingConfirm').on('click',function(){
+        $http({
+            method:'POST',
+            headers:{'Content-Type':'application/x-www-form-urlencoded'},
+            url:'auth/database/backend.php?module=bookingform',
+            data:$.param({"bName":$scope.bName, "bEmail":$scope.bEmail,"bPhone":$scope.bPhone, "bDate":$scope.bDate, "bTime":$scope.bTime,"bService":$scope.bService,"bDesc":$scope.bDesc})
+        }).then(function successCallback(response){
+           var mes = response.data.result;
+            if (mes === "Failed!")
+                window.alert(mes);
+            else if(mes === "Success!"){ 
+                //write cookie
+                $.cookie('bName', $scope.bName);
+                $.cookie('bEmail', $scope.bEmail);
+                $.cookie('bPhone', $scope.bPhone);
+                $.cookie('bDate',$scope.bDate);
+                $.cookie('bTime',$scope.bTime);
+                $.cookie('bService',$scope.bService);
+                        
+                
+                window.location.href = "views/bookingConfirmation.php";
+            }
+        });
+    })
+    
+    
+    
 });
+
+app.controller("bookingConfirmCtrl",function($scope){
+    //read cookie
+    $scope.bName = $.cookie('bName');
+    $scope.bPhone = $.cookie('bPhone');
+    $scope.bEmail = $.cookie('bEmail');
+    $scope.bDate = $.cookie('bDate');
+    $scope.bTime = $.cookie('bTime');
+    $scope.bService = $.cookie('bService');
+});
+
+
 
 app.config(function($routeProvider,$locationProvider){
     $locationProvider.hashPrefix('');
