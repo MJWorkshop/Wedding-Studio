@@ -21,7 +21,7 @@ app.controller("myController", function($scope,$http){
     });
 });
 
-app.controller("bookingCtrl", function($scope, $http) {
+app.controller("bookingCtrl", function($scope, $http, $filter) {
     
     //datepicker function
     var now = new Date();
@@ -32,6 +32,7 @@ app.controller("bookingCtrl", function($scope, $http) {
         onSelect:function(checked){
             var state = (checked) ? 'selected': 'unselected';
             //window.alert(this.toLocaleDateString());
+            $scope.bDate = this.toLocaleDateString();
             $('.strDate').val(this.toLocaleDateString());
 //            console.log($('.strDate'));
             //console.log(this.toLocaleDateString());
@@ -42,7 +43,7 @@ app.controller("bookingCtrl", function($scope, $http) {
     });
     
     //backend
-    $('.btnBookingConfirm').on('click',function(){
+    $(document).on('click','.btnBookingConfirm',function(){
         $http({
             method:'POST',
             headers:{'Content-Type':'application/x-www-form-urlencoded'},
@@ -50,8 +51,10 @@ app.controller("bookingCtrl", function($scope, $http) {
             data:$.param({"bName":$scope.bName, "bEmail":$scope.bEmail,"bPhone":$scope.bPhone, "bDate":$scope.bDate, "bTime":$scope.bTime,"bService":$scope.bService,"bDesc":$scope.bDesc})
         }).then(function successCallback(response){
            var mes = response.data.result;
-            if (mes === "Failed!")
+            if (mes === "Failed!"){
                 window.alert(mes);
+                //window.location.href = "views/bookingConfirmation.php";
+            }
             else if(mes === "Success!"){ 
                 //write cookie
                 $.cookie('bName', $scope.bName);
@@ -61,13 +64,14 @@ app.controller("bookingCtrl", function($scope, $http) {
                 $.cookie('bTime',$scope.bTime);
                 $.cookie('bService',$scope.bService);
                         
-                
+                alert("I am an alert box!");
                 window.location.href = "views/bookingConfirmation.php";
             }
         });
+        
     })
     
-    
+    //window.location.href = "views/bookingConfirmation.php";
     
 });
 

@@ -109,7 +109,7 @@
         
         <div class="row">
             <div class="col-md-1"><button type="button" class="btn btn-danger btn-lg">Back</button></div>
-            <div class="col-md-1 col-md-push-9"><button type="button"  class="btn btn-success btn-lg btnBookingConfirm">Submit</button></div>
+            <div class="col-md-1 col-md-push-9"><button type="button"  class="btn btn-success btn-lg btnBookingConfirm ">Submit</button></div>
         </div>
             
         
